@@ -10,46 +10,46 @@
     /* Core Brand Colors */
     --background: 0 0% 100%;
     --foreground: 222 47% 11%;
-    
+
     /* Primary - Freelex Blue */
     --primary: 221 77% 48%;
     --primary-foreground: 0 0% 100%;
     --primary-glow: 221 77% 55%;
     --primary-muted: 221 77% 95%;
-    
+
     /* Secondary */
     --secondary: 220 14% 96%;
     --secondary-foreground: 222 47% 11%;
-    
+
     /* Muted */
     --muted: 220 14% 96%;
     --muted-foreground: 220 9% 46%;
-    
+
     /* Accent */
     --accent: 221 77% 48%;
     --accent-foreground: 0 0% 100%;
-    
+
     /* Cards & Surfaces */
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
     --card-elevated: 0 0% 100%;
-    
+
     /* Popover */
     --popover: 0 0% 100%;
     --popover-foreground: 222 47% 11%;
-    
+
     /* Destructive */
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    
+
     /* Borders & Inputs */
     --border: 220 13% 91%;
     --input: 220 13% 91%;
     --ring: 221 77% 48%;
-    
+
     /* Radius */
     --radius: 0.75rem;
-    
+
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
     --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.1), 0 2px 4px -2px hsl(0 0% 0% / 0.1);
@@ -58,13 +58,13 @@
     --shadow-2xl: 0 25px 50px -12px hsl(0 0% 0% / 0.25);
     --shadow-glow: 0 0 40px hsl(221 77% 48% / 0.3);
     --shadow-glow-lg: 0 0 60px hsl(221 77% 48% / 0.4);
-    
+
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, hsl(221 77% 48%) 0%, hsl(221 77% 58%) 100%);
     --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(220 14% 98%) 100%);
     --gradient-hero: linear-gradient(180deg, hsl(220 14% 98%) 0%, hsl(0 0% 100%) 100%);
     --gradient-cta: linear-gradient(135deg, hsl(221 77% 45%) 0%, hsl(221 77% 52%) 50%, hsl(221 77% 48%) 100%);
-    
+
     /* Sidebar */
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -101,7 +101,7 @@
   * {
     @apply border-border;
   }
-  
+
   html {
     scroll-behavior: smooth;
   }
@@ -137,6 +137,7 @@
 }
 
 @layer components {
+
   /* Premium Button Variants */
   .btn-hero {
     @apply relative overflow-hidden px-8 py-4 text-lg font-semibold;
@@ -144,147 +145,155 @@
     box-shadow: var(--shadow-lg), var(--shadow-glow);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .btn-hero:hover {
     transform: translateY(-2px) scale(1.02);
     box-shadow: var(--shadow-xl), var(--shadow-glow-lg);
   }
-  
+
   .btn-hero:active {
     transform: translateY(0) scale(0.98);
   }
-  
+
   .btn-secondary-hero {
     @apply px-8 py-4 text-lg font-semibold border-2 border-primary/20 text-primary bg-transparent;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .btn-secondary-hero:hover {
     @apply bg-primary/5 border-primary/40;
     transform: translateY(-2px);
   }
-  
+
   /* Card Variants */
   .card-feature {
     @apply relative p-8 rounded-2xl bg-card border border-border/50;
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   .card-feature:hover {
     @apply border-primary/30 bg-primary-muted;
     transform: translateY(-8px);
     box-shadow: var(--shadow-xl);
   }
-  
+
   .card-testimonial {
     @apply p-8 rounded-2xl bg-card border border-border/50;
     transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  
+
   /* Typography */
   .text-gradient {
     @apply bg-clip-text text-transparent;
     background-image: var(--gradient-primary);
   }
-  
+
   .headline-xl {
     @apply text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1];
   }
-  
+
   .headline-lg {
     @apply text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.15];
   }
-  
+
   .headline-md {
     @apply text-3xl md:text-4xl font-bold tracking-tight;
   }
-  
+
   .subheadline {
     @apply text-lg md:text-xl text-muted-foreground leading-relaxed;
   }
-  
+
   /* Section Styles */
   .section-padding {
     @apply py-24 md:py-32 lg:py-40;
   }
-  
+
   .container-narrow {
     @apply max-w-5xl mx-auto px-6;
   }
-  
+
   .container-wide {
     @apply max-w-7xl mx-auto px-6;
   }
-  
+
   /* iPhone Mockup */
   .iphone-mockup {
     @apply relative;
     filter: drop-shadow(0 25px 50px rgba(0, 0, 0, 0.15));
   }
-  
+
   .iphone-float {
     animation: float 6s ease-in-out infinite;
   }
-  
+
   /* Animations */
   @keyframes float {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0px);
     }
+
     50% {
       transform: translateY(-20px);
     }
   }
-  
+
   @keyframes pulse-glow {
-    0%, 100% {
+
+    0%,
+    100% {
       box-shadow: var(--shadow-lg), 0 0 20px hsl(221 77% 48% / 0.3);
     }
+
     50% {
       box-shadow: var(--shadow-xl), 0 0 40px hsl(221 77% 48% / 0.5);
     }
   }
-  
+
   .animate-pulse-glow {
     animation: pulse-glow 2s ease-in-out infinite;
   }
-  
+
   @keyframes shimmer {
     0% {
       background-position: -200% 0;
     }
+
     100% {
       background-position: 200% 0;
     }
   }
-  
+
   .animate-shimmer {
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      hsl(0 0% 100% / 0.1) 50%,
-      transparent 100%
-    );
+    background: linear-gradient(90deg,
+        transparent 0%,
+        hsl(0 0% 100% / 0.1) 50%,
+        transparent 100%);
     background-size: 200% 100%;
     animation: shimmer 2s infinite;
   }
-  
+
   /* Scroll Indicator */
   .scroll-indicator {
     @apply w-6 h-10 rounded-full border-2 border-primary/30 flex items-start justify-center p-2;
   }
-  
+
   .scroll-indicator::after {
     content: '';
     @apply w-1 h-2 bg-primary rounded-full;
     animation: scroll-down 1.5s ease-in-out infinite;
   }
-  
+
   @keyframes scroll-down {
-    0%, 100% {
+
+    0%,
+    100% {
       transform: translateY(0);
       opacity: 1;
     }
+
     50% {
       transform: translateY(8px);
       opacity: 0.5;
@@ -296,12 +305,25 @@
   .perspective-1000 {
     perspective: 1000px;
   }
-  
+
   .preserve-3d {
     transform-style: preserve-3d;
   }
-  
+
   .backface-hidden {
     backface-visibility: hidden;
   }
+}
+
+/* Force Sonner/Toaster positioning to prevent layout shift */
+section[aria-label="Notifications alt+T"] {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  z-index: 9999 !important;
+  pointer-events: none;
+}
+
+section[aria-label="Notifications alt+T"]>* {
+  pointer-events: auto;
 }
