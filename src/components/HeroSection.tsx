@@ -5,6 +5,7 @@ import freelancerDesigner from '@/assets/freelancer-designer.png';
 import freelancerWaiter from '@/assets/freelancer-waiter.png';
 import freelancerHandyman from '@/assets/freelancer-handyman.png';
 import freelancerPhotographer from '@/assets/freelancer-photographer.png';
+import WaitlistForm from './WaitlistForm';
 
 const freelancers = [
   {
@@ -176,8 +177,9 @@ const HeroSection = () => {
                 className="btn-hero rounded-full text-sm text-primary-foreground"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => (document.querySelector('input[type="email"]') as HTMLInputElement)?.focus()}
               >
-                Baixar App
+                Entrar na Lista
               </motion.button>
             </div>
           </div>
@@ -193,7 +195,7 @@ const HeroSection = () => {
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 border border-primary/10 mb-8"
           >
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-medium text-primary">+50.000 freelancers ativos</span>
+            <span className="text-sm font-medium text-primary">Lista de espera aberta</span>
           </motion.div>
 
           {/* Headline with word-by-word animation */}
@@ -228,34 +230,11 @@ const HeroSection = () => {
 
           {/* CTA Buttons */}
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 1.1, ease: [0.4, 0, 0.2, 1] }}
           >
-            <motion.button
-              className="btn-hero rounded-full text-primary-foreground flex items-center gap-3"
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z" />
-              </svg>
-              Baixar para iOS
-            </motion.button>
-
-            <motion.button
-              className="btn-secondary-hero rounded-full flex items-center gap-3"
-              whileHover={{ scale: 1.05, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-              transition={{ type: "spring", stiffness: 400, damping: 17 }}
-            >
-              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M3.609 1.814L13.792 12 3.609 22.186a.996.996 0 01-.609-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333 8.635-8.635zm3.199-3.199l2.807 1.626a1 1 0 010 1.732l-2.807 1.626L15.206 12l2.492-2.492zM5.864 2.658L16.8 9.191l-2.302 2.302-8.634-8.835z" />
-              </svg>
-              Baixar para Android
-            </motion.button>
+            <WaitlistForm className="mt-4" />
           </motion.div>
         </div>
 
